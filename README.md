@@ -1,6 +1,16 @@
-# Tooling & Assembly Solutions website
+# Tooling & Assembly Solutions websites
 
-The tasolutions.com site, rebuilt as a React single-page app (Vite + TypeScript + React Router). It's meant to be hosted on Vercel.
+One React app (Vite + TypeScript + React Router) that serves three sites from a single Vercel project, chosen by the domain the visitor uses:
+
+- **tasolutions.com**: the main company site
+- **slatwasher.com**: the Slat Washer product page
+- **automationdreamteam.com**: the Automation Dream Team page
+
+To preview the sister sites locally, open `http://slatwasher.localhost:5179` or `http://dreamteam.localhost:5179`, or add `?site=slatwasher` / `?site=dreamteam` to any URL (this works on Vercel preview links too).
+
+## Connecting the domains
+
+In the Vercel project, open **Settings → Domains** and add all six names: `tasolutions.com`, `www.tasolutions.com`, `slatwasher.com`, `www.slatwasher.com`, `automationdreamteam.com` and `www.automationdreamteam.com`. Vercel shows the DNS records to set at the domain registrar for each one. No other configuration is needed; the app picks the right site from the domain.
 
 ## Develop
 

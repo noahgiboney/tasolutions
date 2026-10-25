@@ -1,10 +1,18 @@
 # Agent guide
 
-Website for Tooling & Assembly Solutions (tasolutions.com). React 19 + Vite + TypeScript + React Router 7, deployed on Vercel.
+One repo and one Vercel project serve three websites for Tooling & Assembly Solutions:
+
+| Domain | Site | Entry component |
+|---|---|---|
+| tasolutions.com | Main company site (multi-page, React Router) | `src/App.tsx` |
+| slatwasher.com | Slat Washer product page (single page) | `src/sites/SlatWasher.tsx` |
+| automationdreamteam.com | Automation Dream Team (single page) | `src/sites/DreamTeam.tsx` |
+
+Stack: React 19 + Vite + TypeScript + React Router 7, deployed on Vercel.
 
 ## Before changing anything visual
 
-Read [DESIGN.md](DESIGN.md). It defines the "Blueprint" design: tokens, type, components, and imagery rules. Follow it, and update it in the same change if you add or alter a pattern.
+Read [DESIGN.md](DESIGN.md). It defines the "Blueprint" design shared by all three sites: tokens, type, components, and imagery rules. Follow it, and update it in the same change if you add or alter a pattern.
 
 Hard rules:
 - No AI-generated or stock images. Only real TAS photos, shown in `<Figure>` plates.
@@ -12,14 +20,29 @@ Hard rules:
 - Use the CSS variables in `src/index.css`; don't hard-code colors.
 - Page copy lives in `src/content.ts`, not in components.
 
+## Three sites, one app
+
+`src/site.ts` picks the site from the visitor's hostname (`www.` is ignored) before React renders, and sets the tab title, meta description and favicon. `src/main.tsx` then renders the matching entry component. Unknown hosts (Vercel preview URLs, localhost) get the TAS site.
+
+Routing happens in the app, not in `vercel.json`: Vercel serves `index.html` before any `vercel.json` rule runs, so a host-based rewrite would never fire for `/`. Don't try to move it there.
+
+Preview a sister site:
+- Local: `http://slatwasher.localhost:5179` or `http://dreamteam.localhost:5179` (or add `?site=slatwasher` / `?site=dreamteam` to any URL).
+- Vercel preview deploys: add `?site=slatwasher` or `?site=dreamteam`.
+
+To add a domain: add it to `hostToSite` and `siteMeta` in `src/site.ts`, add an entry component under `src/sites/`, and attach the domain to the Vercel project.
+
+Shared building blocks: `SiteHeader`, `SiteFooter`, `CallToAction`, `Figure`, `MachineCard`, `DimensionLine` in `src/components/`. The sister sites wrap their content in `src/sites/SisterLayout.tsx`, which links Contact to tasolutions.com/contact.
+
 ## Layout of the code
 
-- `src/content.ts`: all copy, machine specs, contact info, document links.
-- `src/pages/`: one component per route.
-- `src/components/`: `Layout` (header, footer), `PageHero`, `Figure`, `DimensionLine`, `Carousel`, `MachineCard`, `Icons`.
+- `src/content.ts`: all copy for all three sites (company info, TAS pages, machines, `slatWasher`, `dreamTeam`).
+- `src/pages/`: one component per tasolutions.com route.
+- `src/sites/`: the two sister sites and their shared layout.
+- `src/components/`: shared components.
 - `src/index.css`: all styles, organized by the component headings used in DESIGN.md.
-- `public/images/`, `public/documents/`: static assets.
-- `vercel.json`: SPA rewrite plus redirects from the old `.html` URLs. Keep the redirects when adding routes.
+- `public/images/`, `public/documents/`: static assets, shared by all domains.
+- `vercel.json`: SPA rewrite, plus redirects from the old tasolutions.com `.html` URLs. Keep the redirects when adding routes.
 
 ## Commands
 
@@ -29,4 +52,4 @@ npm run build    # type-check + production build (must pass)
 npm run lint     # oxlint (must be clean)
 ```
 
-Check any UI change at 375px and desktop width before finishing.
+Check any UI change at 375px and desktop width, on every site it touches, before finishing.

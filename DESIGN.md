@@ -2,6 +2,8 @@
 
 The site should read like a clean engineering drawing: navy drawing sheets with a fine grid, hairline rules, typewriter-style labels, and red used the way a checker uses a red pen. It's a precision machine shop, so the design is precise too: square corners, exact alignment, nothing decorative that doesn't look like it came off a drawing.
 
+The same design covers all three sites: tasolutions.com, slatwasher.com and automationdreamteam.com (see AGENTS.md for how one app serves all three). The sister sites use the same tokens and components. Their only differences are the brand in the header (Slat Washer uses the TAS logo; Dream Team uses the ADT logo), in-page anchor links instead of page links, and Contact pointing to tasolutions.com/contact.
+
 This file is the source of truth for how the site looks. When you change the UI, follow it. If a change needs something the spec doesn't cover, add it here in the same commit.
 
 ---
@@ -133,8 +135,11 @@ Rows split by hairlines: mono uppercase label on the left, Plex Sans 500 value o
 ### Machine card (`MachineCard.tsx`)
 A figure plate that links to the machine page. Caption: machine name, plus production rate as metadata. On hover the frame turns red and the image scales to 1.03.
 
+### Small plate (`.plate-small`)
+For figures whose source photo is only about 200px wide (like the Slat Washer machine). Caps the plate at 420px so the image is never shown much past 2× its size.
+
 ### Process cell (`.process-cell`)
-On navy: a `STEP NN` label, an h3 and body text, in a grid of cells separated by `--rule-dark`. Don't repeat the h3 text in the label. The automation process steps use the same `STEP NN` label beside a figure plate.
+On navy: a `STEP NN` label (or `MODE NN`, `PART NN` on the sister sites), an h3 and optional body text, in a grid of cells separated by `--rule-dark`. Use `.process-grid` for three columns and `.process-grid-4` for four. Don't repeat the h3 text in the label. The automation process steps use the same `STEP NN` label beside a figure plate.
 
 ### Call to action (`CallToAction` in `Home.tsx`)
 A flat red band, white text, a white primary-inverse button (`.btn-white`) and an outline-light button.

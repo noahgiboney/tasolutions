@@ -12,8 +12,60 @@ export const company = {
 }
 
 export const externalSites = {
+  tas: { label: 'Tooling & Assembly Solutions', href: 'https://tasolutions.com/' },
   products: { label: 'Slat Washer', href: 'https://slatwasher.com/' },
   dreamTeam: { label: 'Automation Dream Team', href: 'https://automationdreamteam.com/' },
+}
+
+// slatwasher.com (copy from the 2023 Slat Washer page)
+export const slatWasher = {
+  name: 'Slat Washer',
+  patent: 'Patent #7252102',
+  description:
+    'The Slat Washer by Tooling & Assembly Solutions: an automated, stainless steel machine that cleans filling-line slats for the pharmaceutical industry.',
+  lead: 'An automated slat cleaning machine for the pharmaceutical industry, designed and built by Tooling & Assembly Solutions.',
+  intro:
+    'Along with the custom machinery, tooling and fixtures we build specifically based on customer requirements, we have a few products of our own.',
+  body: [
+    'This machine is called a Slatwasher. The Slatwasher is used in the pharmaceutical industry to clean Slats used on equipment in the filling process of vitamins and tablets into bottles. These slats need to be cleaned in an efficient manner to reduce cross contamination. We at TAS have developed this machine to be a cost effective solution to the manual way of cleaning currently being done all over the world.',
+    'The machine design is 304 and 316 stainless steel construction with a complete outside washdown design. There are no external fasteners on the machine to collect debris during the cleaning process. The machine design utilizes a horizontal rotary carousel that holds 72 slats ranging in length from 15” to 42” in length. The machine design utilizes King, Lakso and Merril style slats. The machine controls are based on an Allen Bradley PLC and touch screen and all are UL Listed. There are 4 modes of operation for the Slatwasher, Pressure wash, Ultrasonic wash, Rinse and dry. We can supply an optional USP rinse on the machine. The complete cycle of the machine is 1 hour to process 72 slats.',
+  ],
+  stats: [
+    { value: '72', label: 'Slats per cycle' },
+    { value: '1 hr', label: 'Complete cycle' },
+    { value: '15–42"', label: 'Slat lengths' },
+    { value: '4', label: 'Modes of operation' },
+  ],
+  specs: [
+    { label: 'Construction', value: '304 and 316 stainless steel' },
+    { label: 'Design', value: 'Complete outside washdown, no external fasteners' },
+    { label: 'Carousel', value: 'Horizontal rotary, holds 72 slats' },
+    { label: 'Slat lengths', value: '15” to 42”' },
+    { label: 'Slat styles', value: 'King, Lakso and Merril' },
+    { label: 'Controls', value: 'Allen Bradley PLC and touch screen, UL Listed' },
+    { label: 'Cycle time', value: '1 hour for 72 slats' },
+    { label: 'Option', value: 'USP rinse' },
+    { label: 'Patent', value: '#7252102' },
+  ],
+  modes: ['Pressure wash', 'Ultrasonic wash', 'Rinse', 'Dry'],
+}
+
+// automationdreamteam.com (copy from the 2023 Dream Team page)
+export const dreamTeam = {
+  name: 'Automation Dream Team',
+  description:
+    'Automation Dream Team by Tooling & Assembly Solutions: hand-selected engineers, technicians, HAAS machines and suppliers building automated assembly machines.',
+  lead: 'Hand-selected engineers, technicians, machines and suppliers, committed to automation excellence.',
+  body: [
+    'Tooling and Assembly Solutions believes that in order to produce superior machinery we have to employ a superior group of resources including engineers, technicians, and a supply chain of reliable quality components and machines.',
+    'This is where the "Dream Team" concept began. Each aspect of what makes up the Dream Team has been hand selected for being the best available to get the job done. From our HAAS machines to our technicians with years of experience in automation technology. The Dream Team commitment to Automation Excellence will provide you with the most productivity for your investment dollar.',
+  ],
+  team: [
+    { title: 'Engineers', body: 'Hand selected for being the best available to get the job done.' },
+    { title: 'Technicians', body: 'Years of experience in automation technology.' },
+    { title: 'HAAS machines', body: 'HAAS CNC machining centers, including 5-axis.' },
+    { title: 'Supply chain', body: 'Reliable quality components and machines.' },
+  ],
 }
 
 export const home = {

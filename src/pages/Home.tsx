@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import SharedCallToAction from '../components/CallToAction.tsx'
 import Carousel from '../components/Carousel.tsx'
 import DimensionLine from '../components/DimensionLine.tsx'
 import Figure from '../components/Figure.tsx'
@@ -115,24 +116,15 @@ export default function Home() {
   )
 }
 
+// The TAS version of the shared CTA band, with an in-site Contact link.
 export function CallToAction() {
   return (
-    <section className="cta">
-      <div className="container cta-inner">
-        <div>
-          <p className="cta-label">Request a quote</p>
-          <h2>Have a project in mind?</h2>
-          <p>Large or small, every job gets the same care in planning and processing.</p>
-        </div>
-        <div className="cta-actions">
-          <a href={company.phoneHref} className="btn btn-white">
-            Call {company.phone}
-          </a>
-          <Link to="/contact" className="btn btn-outline-light">
-            Contact us →
-          </Link>
-        </div>
-      </div>
-    </section>
+    <SharedCallToAction
+      contact={
+        <Link to="/contact" className="btn btn-outline-light">
+          Contact us →
+        </Link>
+      }
+    />
   )
 }

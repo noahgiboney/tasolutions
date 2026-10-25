@@ -69,6 +69,7 @@ h3 {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 p,
@@ -516,6 +517,11 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 28px;
+}
+
+.hero .dimension + .hero-actions {
+  margin-top: 0;
 }
 
 @media (max-width: 860px) {
@@ -606,8 +612,10 @@ a {
 
 .plate-caption {
   display: flex;
+  flex-wrap: wrap; /* metadata drops to a second line when the plate is narrow */
   justify-content: space-between;
-  gap: 12px;
+  column-gap: 12px;
+  row-gap: 2px;
   padding: 8px 2px 0;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -814,10 +822,46 @@ a {
   font-size: 0.97rem;
 }
 
+.process-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sheet-note {
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
 @media (max-width: 900px) {
   .process-grid {
     grid-template-columns: 1fr;
   }
+
+  .process-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .process-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Sister sites ---------- */
+/* Small source photos (about 200px wide) get a narrower plate (DESIGN.md §7). */
+.plate-small {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+}
+
+.spec-table-spaced {
+  width: 100%;
+  margin-top: 16px;
 }
 
 /* ---------- Call to action ---------- */
@@ -989,7 +1033,7 @@ a {
 
 .machine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 24px;
   margin-top: clamp(40px, 6vw, 64px);
 }
