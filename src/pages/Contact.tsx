@@ -1,3 +1,4 @@
+import ContactForm from '../components/ContactForm.tsx'
 import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
 import { Mail, MapPin, Phone } from '../components/Icons.tsx'
@@ -44,9 +45,24 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid" id="message">
+        <div className="container split">
+          <div>
+            <p className="label">02 / Send a message</p>
+            <h2 className="section-title">Tell us about your project</h2>
+            <p className="lead form-intro">
+              Drawings, quantities, timelines: send what you have and we'll get back to you.
+            </p>
+          </div>
+          <div className="form-panel">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
-          <p className="label">02 / Our companies</p>
+          <p className="label">03 / Our companies</p>
           <h2 className="section-title">Two shops, one team</h2>
           <div className="company-grid">
             <div className="company">

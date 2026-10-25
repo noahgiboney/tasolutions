@@ -1,17 +1,66 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/ourstory.html", "destination": "/our-story", "permanent": true },
-    { "source": "/automation.html", "destination": "/automation", "permanent": true },
-    { "source": "/quality.html", "destination": "/quality", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true },
-    { "source": "/machine1.html", "destination": "/automation/simplate-assembly", "permanent": true },
-    { "source": "/machine2.html", "destination": "/automation/ear-ring-assembly", "permanent": true },
-    { "source": "/machine3.html", "destination": "/automation/swab-assembly", "permanent": true },
-    { "source": "/machine4.html", "destination": "/automation/anode-bending", "permanent": true },
-    { "source": "/machine5.html", "destination": "/automation/gear-box-assembly", "permanent": true },
-    { "source": "/documents/COFC.pdf", "destination": "/documents/certificate-of-conformance.pdf", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ourstory.html",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/automation.html",
+      "destination": "/automation",
+      "permanent": true
+    },
+    {
+      "source": "/quality.html",
+      "destination": "/quality",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/machine1.html",
+      "destination": "/automation/simplate-assembly",
+      "permanent": true
+    },
+    {
+      "source": "/machine2.html",
+      "destination": "/automation/ear-ring-assembly",
+      "permanent": true
+    },
+    {
+      "source": "/machine3.html",
+      "destination": "/automation/swab-assembly",
+      "permanent": true
+    },
+    {
+      "source": "/machine4.html",
+      "destination": "/automation/anode-bending",
+      "permanent": true
+    },
+    {
+      "source": "/machine5.html",
+      "destination": "/automation/gear-box-assembly",
+      "permanent": true
+    },
+    {
+      "source": "/documents/COFC.pdf",
+      "destination": "/documents/certificate-of-conformance.pdf",
+      "permanent": true
+    }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

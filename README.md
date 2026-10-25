@@ -8,6 +8,16 @@ One React app (Vite + TypeScript + React Router) that serves three sites from a 
 
 To preview the sister sites locally, open `http://slatwasher.localhost:5179` or `http://dreamteam.localhost:5179`, or add `?site=slatwasher` / `?site=dreamteam` to any URL (this works on Vercel preview links too).
 
+## Contact form (Resend)
+
+The form on tasolutions.com/contact posts to `/api/contact`, a Vercel serverless function (`api/contact.ts`) that emails the message through [Resend](https://resend.com). The visitor's address is set as reply-to, so you can reply directly.
+
+Setup:
+
+1. Copy `.env.example` to `.env.local` and fill in `RESEND_API_KEY`. `npm run dev` serves `/api/contact` locally with the same code.
+2. In Vercel, add `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` under **Settings → Environment Variables**, then redeploy.
+3. To deliver to `email@tasolutions.com`, verify the `tasolutions.com` domain in Resend (it gives you DNS records to add), then set `CONTACT_FROM_EMAIL` to an address on that domain, such as `TAS Website <website@tasolutions.com>`. Until then, Resend's test sender `onboarding@resend.dev` only delivers to the email address on your Resend account.
+
 ## Connecting the domains
 
 In the Vercel project, open **Settings → Domains** and add all six names: `tasolutions.com`, `www.tasolutions.com`, `slatwasher.com`, `www.slatwasher.com`, `automationdreamteam.com` and `www.automationdreamteam.com`. Vercel shows the DNS records to set at the domain registrar for each one. No other configuration is needed; the app picks the right site from the domain.

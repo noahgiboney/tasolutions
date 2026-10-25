@@ -1335,6 +1335,162 @@ a {
   }
 }
 
+/* ---------- Contact form ---------- */
+.form-intro {
+  margin-top: 16px;
+  max-width: 40ch;
+}
+
+.form-panel {
+  padding: clamp(20px, 4vw, 32px);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  border-top: 3px solid var(--red);
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  align-content: start; /* don't stretch when a neighbor shows an error */
+  gap: 6px;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.field-optional {
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-bottom-color: var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  transition: border-color var(--ease);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #8a92ad;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--rule-strong);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 0;
+  border-color: var(--red);
+}
+
+.field.has-error input,
+.field.has-error textarea {
+  border-color: var(--red);
+  border-bottom-width: 2px;
+}
+
+.field-error,
+.form-error {
+  font-size: 0.85rem;
+  color: var(--red-600);
+}
+
+.form-error {
+  padding: 12px 14px;
+  border: 1px solid var(--red);
+  background: rgb(215 20 31 / 0.05);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-actions .btn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.form-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-success {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.form-success .label {
+  margin-bottom: 0;
+}
+
+.form-success h3 {
+  font-size: 1.4rem;
+}
+
+.form-success p:not(.label) {
+  color: var(--muted);
+}
+
+.form-success a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* ---------- Footer (title block) ---------- */
 .site-footer {
   padding-block: 56px;

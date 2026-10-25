@@ -34,6 +34,14 @@ To add a domain: add it to `hostToSite` and `siteMeta` in `src/site.ts`, add an 
 
 Shared building blocks: `SiteHeader`, `SiteFooter`, `CallToAction`, `Figure`, `MachineCard`, `DimensionLine` in `src/components/`. The sister sites wrap their content in `src/sites/SisterLayout.tsx`, which links Contact to tasolutions.com/contact.
 
+## Contact form
+
+`src/components/ContactForm.tsx` (on the TAS contact page) posts JSON to `/api/contact`. The logic lives in `server/contact.ts` (validation, honeypot, Resend send) and is shared by:
+- `api/contact.ts`: the Vercel serverless function in production.
+- `vite.config.ts`: a dev-only middleware so `npm run dev` serves the same endpoint.
+
+Env vars (see `.env.example`): `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. They're server-only; never prefix them with `VITE_`. `vercel.json`'s SPA rewrite excludes `/api/`; keep it that way.
+
 ## Layout of the code
 
 - `src/content.ts`: all copy for all three sites (company info, TAS pages, machines, `slatWasher`, `dreamTeam`).

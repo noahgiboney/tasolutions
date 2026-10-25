@@ -144,6 +144,9 @@ On navy: a `STEP NN` label (or `MODE NN`, `PART NN` on the sister sites), an h3 
 ### Call to action (`CallToAction` in `Home.tsx`)
 A flat red band, white text, a white primary-inverse button (`.btn-white`) and an outline-light button.
 
+### Contact form (`ContactForm.tsx`)
+A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit; the success state replaces the form with a short confirmation and a phone number.
+
 ### Footer as title block (`Layout.tsx`)
 The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `LOCATION`, `PHONE`, `EMAIL`, `PAGES`, `SISTER COMPANIES`) and its value. The copyright line sits in the last row like a revision note.
 
