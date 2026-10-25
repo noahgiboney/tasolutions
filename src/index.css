@@ -489,6 +489,24 @@ a {
   font-size: clamp(1.05rem, 1.5vw, 1.15rem);
 }
 
+.hero-mission {
+  max-width: 50ch;
+  margin-top: 28px;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--red);
+}
+
+.hero-mission .label {
+  margin-bottom: 8px;
+}
+
+.hero-mission blockquote p {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #fff;
+}
+
 .hero .dimension {
   max-width: 440px;
   margin: 28px 0;

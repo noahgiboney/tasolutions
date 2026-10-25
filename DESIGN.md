@@ -114,6 +114,13 @@ A `.sheet` with: a metadata label (`SHEET 03 · AUTOMATION`), the page title, an
 ### Figure plate (`Figure.tsx`)
 The standard way to show any image. A 1px frame, 8px inner padding, the image, then a mono caption bar: `FIG. 03 — SWAB ASSEMBLY` on the left and optional metadata (`45/MIN`) on the right. Number figures in order on each page.
 
+### Mission quote
+The mission statement (`story.mission` in `content.ts`) appears in two places:
+- **Home hero (`.hero-mission`):** under the lead paragraph. A 2px red rule on the left, a `MISSION STATEMENT` label, and the quote in white Plex Sans 500.
+- **Our Story (`.mission`):** a large bordered panel with a 3px red top rule.
+
+Both read the same content entry, so edit the text in one place.
+
 ### Dimension line (`DimensionLine.tsx`)
 A decorative `|◄──── ±.0001" ────►|` in `--dim` (navy) or `--muted` (light). Always `aria-hidden`. At most one per view.
 

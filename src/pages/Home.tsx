@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import Carousel from '../components/Carousel.tsx'
 import DimensionLine from '../components/DimensionLine.tsx'
 import Figure from '../components/Figure.tsx'
-import { company, home } from '../content.ts'
+import { company, home, story } from '../content.ts'
 
 export default function Home() {
   return (
@@ -20,6 +20,12 @@ export default function Home() {
               Precision machining and automated assembly machines for medical, aerospace, defense
               and automotive manufacturers.
             </p>
+            <figure className="hero-mission">
+              <figcaption className="label">Mission statement</figcaption>
+              <blockquote>
+                <p>“{story.mission}”</p>
+              </blockquote>
+            </figure>
             <DimensionLine value='±.0001"' />
             <div className="hero-actions">
               <Link to="/automation" className="btn btn-primary">
