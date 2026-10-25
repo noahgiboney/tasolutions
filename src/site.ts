@@ -13,7 +13,7 @@ export const siteMeta: Record<SiteId, SiteMeta> = {
   tas: {
     title: 'Tooling & Assembly Solutions',
     description:
-      'Tooling & Assembly Solutions: precision machining and custom automated assembly machines, built in Simi Valley, California since 1996.',
+      'Tooling & Assembly Solutions: precision machining and custom automated assembly machines, built since 1996.',
     favicon: '/favicon.png',
   },
   slatwasher: {

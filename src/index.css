@@ -1258,7 +1258,7 @@ a {
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 40px;
   border-top: 3px solid var(--red);
   border-left: 1px solid var(--rule);

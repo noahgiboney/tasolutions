@@ -4,11 +4,9 @@ export const company = {
   name: 'Tooling & Assembly Solutions',
   shortName: 'TAS',
   founded: 1996,
-  location: 'Simi Valley, California',
   phone: '(805) 328-4750',
   phoneHref: 'tel:+18053284750',
   email: 'email@tasolutions.com',
-  mapsHref: 'https://www.google.com/maps/search/?api=1&query=Simi+Valley+California',
 }
 
 export const externalSites = {

@@ -14,7 +14,8 @@ This file is the source of truth for how the site looks. When you change the UI,
 2. **Real work only.** Every photo shows a real TAS part, machine or piece of equipment. No AI-generated or stock "industrial" imagery, ever.
 3. **Red is a redline.** Red marks the one thing to act on (primary button, active nav item, key label). If everything is red, nothing is.
 4. **Square and flat.** `border-radius: 0` everywhere. No box shadows, no gradients, no glows.
-5. **Copy stays the company's.** Page text lives in `src/content.ts`. Design changes don't rewrite copy.
+5. **No location.** The site never names a city or address. Contact is by phone, email and the contact form.
+6. **Copy stays the company's.** Page text lives in `src/content.ts`. Design changes don't rewrite copy.
 
 ---
 
@@ -96,7 +97,7 @@ Uppercase is only for mono labels and captions, never for headings or body copy.
 Each lives in `src/components/` (React) with styles in `src/index.css` under a matching heading.
 
 ### Label (`.label`)
-Mono, uppercase, red on light (`--red-on-dark` on navy). Format: `NN / NAME` for numbered sections (`01 / WHAT WE DO`), or plain metadata (`DWG TAS-1996 · SIMI VALLEY, CA`). Sits directly above a heading.
+Mono, uppercase, red on light (`--red-on-dark` on navy). Format: `NN / NAME` for numbered sections (`01 / WHAT WE DO`), or plain metadata (`DWG TAS-1996 · PRECISION MACHINING AND AUTOMATION`). Sits directly above a heading.
 
 ### Buttons (`.btn`)
 Square, 48px tall (40px for `.btn-sm`), Plex Sans 600, arrow glyph `→` for forward actions.
@@ -148,7 +149,7 @@ A flat red band, white text, a white primary-inverse button (`.btn-white`) and a
 A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit; the success state replaces the form with a short confirmation and a phone number.
 
 ### Footer as title block (`Layout.tsx`)
-The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `LOCATION`, `PHONE`, `EMAIL`, `PAGES`, `SISTER COMPANIES`) and its value. The copyright line sits in the last row like a revision note.
+The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `SISTER COMPANIES`, `ESTABLISHED`, `PHONE`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
 
 ---
 

@@ -1,11 +1,10 @@
 import ContactForm from '../components/ContactForm.tsx'
 import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
-import { Mail, MapPin, Phone } from '../components/Icons.tsx'
+import { Mail, Phone } from '../components/Icons.tsx'
 import { company, externalSites } from '../content.ts'
 
 const methods = [
-  { icon: MapPin, label: 'Location', value: company.location, href: company.mapsHref, external: true },
   { icon: Phone, label: 'Phone', value: company.phone, href: company.phoneHref },
   { icon: Mail, label: 'Email', value: company.email, href: `mailto:${company.email}` },
 ]
@@ -18,7 +17,7 @@ export default function Contact() {
         sheet="05"
         label="Contact"
         title="Contact Us"
-        meta={[company.location, company.phone, company.email]}
+        meta={[company.phone, company.email]}
       />
 
       <section className="section">
@@ -26,13 +25,9 @@ export default function Contact() {
           <p className="label">01 / Get in touch</p>
           <h2 className="section-title">We'd like to hear about your project</h2>
           <ul className="contact-grid">
-            {methods.map(({ icon: Icon, label, value, href, external }) => (
+            {methods.map(({ icon: Icon, label, value, href }) => (
               <li key={label}>
-                <a
-                  href={href}
-                  className="contact-cell"
-                  {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                >
+                <a href={href} className="contact-cell">
                   <span className="contact-icon">
                     <Icon size={22} />
                   </span>

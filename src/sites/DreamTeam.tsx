@@ -29,7 +29,7 @@ export default function DreamTeam() {
       <section className="sheet hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="label label-dark">Automation excellence · {company.location}</p>
+            <p className="label label-dark">Automation excellence · Since {company.founded}</p>
             <h1>{dreamTeam.name}</h1>
             <p className="hero-lead">{dreamTeam.lead}</p>
             <div className="hero-actions">

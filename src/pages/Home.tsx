@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="label label-dark">
-              DWG TAS-{company.founded} · {company.location}
+              DWG TAS-{company.founded} · Precision machining and automation
             </p>
             <h1>{company.name}</h1>
             <p className="hero-lead">

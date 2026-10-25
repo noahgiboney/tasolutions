@@ -35,8 +35,8 @@ export default function SiteFooter({ logo, name, note, columns, rev }: Props) {
             </div>
           ))}
           <div className="tb-cell">
-            <span className="tb-label">Location</span>
-            <span className="tb-value">{company.location}</span>
+            <span className="tb-label">Established</span>
+            <span className="tb-value">{company.founded}</span>
           </div>
           <div className="tb-cell">
             <span className="tb-label">Phone</span>

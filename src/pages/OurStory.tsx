@@ -11,7 +11,7 @@ export default function OurStory() {
         sheet="02"
         label="Our story"
         title="Our Story"
-        meta={[`Est. ${company.founded}`, company.location, '40 yrs machine building']}
+        meta={[`Est. ${company.founded}`, '40 yrs machine building']}
       />
 
       <section className="section">
