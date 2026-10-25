@@ -1,6 +1,8 @@
 // Vercel serverless function: POST /api/contact
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { handleContact } from '../server/contact.ts'
+// Import with ".js": Vercel compiles each file to .js but keeps import paths
+// as written, so a ".ts" path here crashes the function at startup.
+import { handleContact } from '../server/contact.js'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {

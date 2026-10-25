@@ -40,6 +40,8 @@ Shared building blocks: `SiteHeader`, `SiteFooter`, `CallToAction`, `Figure`, `M
 - `api/contact.ts`: the Vercel serverless function in production.
 - `vite.config.ts`: a dev-only middleware so `npm run dev` serves the same endpoint.
 
+Inside `api/` and `server/`, import local files with a `.js` extension (`'../server/contact.js'`), never `.ts`. Vercel compiles each file to `.js` but keeps import paths as written, so a `.ts` import works in `npm run dev` but crashes the deployed function (`FUNCTION_INVOCATION_FAILED`).
+
 Env vars (see `.env.example`): `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. They're server-only; never prefix them with `VITE_`. `vercel.json`'s SPA rewrite excludes `/api/`; keep it that way.
 
 ## Layout of the code
