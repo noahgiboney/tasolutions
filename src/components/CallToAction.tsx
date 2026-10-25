@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react'
-import { company } from '../content.ts'
 
 type Props = {
   label?: string
   title?: string
   body?: string
-  /** The secondary "Contact us" action. The TAS site passes a router <Link>. */
+  /** The "Contact us" button (.btn-white). The TAS site passes a router <Link>. */
   contact: ReactNode
 }
 
@@ -25,9 +24,6 @@ export default function CallToAction({
           <p>{body}</p>
         </div>
         <div className="cta-actions">
-          <a href={company.phoneHref} className="btn btn-white">
-            Call {company.phone}
-          </a>
           {contact}
         </div>
       </div>

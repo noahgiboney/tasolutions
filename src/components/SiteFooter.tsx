@@ -38,13 +38,7 @@ export default function SiteFooter({ logo, name, note, columns, rev }: Props) {
             <span className="tb-label">Established</span>
             <span className="tb-value">{company.founded}</span>
           </div>
-          <div className="tb-cell">
-            <span className="tb-label">Phone</span>
-            <a className="tb-value" href={company.phoneHref}>
-              {company.phone}
-            </a>
-          </div>
-          <div className="tb-cell">
+          <div className="tb-cell tb-wide">
             <span className="tb-label">Email</span>
             <a className="tb-value" href={`mailto:${company.email}`}>
               {company.email}

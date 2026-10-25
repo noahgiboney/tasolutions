@@ -36,8 +36,8 @@ export default function DreamTeam() {
               <a href="#machines" className="btn btn-primary">
                 See our machines →
               </a>
-              <a href={company.phoneHref} className="btn btn-outline-light">
-                Call {company.phone}
+              <a href={`${externalSites.tas.href}contact`} className="btn btn-outline-light">
+                Get in touch
               </a>
             </div>
           </div>

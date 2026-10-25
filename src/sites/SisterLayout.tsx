@@ -54,7 +54,7 @@ export default function SisterLayout({ logo, name, note, anchors, sibling, rev, 
         <CallToAction
           {...cta}
           contact={
-            <a href={contactHref} className="btn btn-outline-light">
+            <a href={contactHref} className="btn btn-white">
               Contact TAS →
             </a>
           }

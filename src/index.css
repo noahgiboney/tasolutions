@@ -1256,57 +1256,6 @@ a {
 }
 
 /* ---------- Contact ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 40px;
-  border-top: 3px solid var(--red);
-  border-left: 1px solid var(--rule);
-}
-
-.contact-cell {
-  display: grid;
-  gap: 4px;
-  height: 100%;
-  padding: 28px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  text-decoration: none;
-  transition: background-color var(--ease);
-}
-
-.contact-cell:hover {
-  background: var(--paper-2);
-}
-
-.contact-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 16px;
-  background: var(--navy-900);
-  color: #fff;
-}
-
-.contact-cell .label {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.contact-value {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--ink);
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 860px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .company-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1452,14 +1401,6 @@ a {
   cursor: progress;
 }
 
-.form-note {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .form-trap {
   position: absolute;
   left: -10000px;
@@ -1514,6 +1455,11 @@ a {
 }
 
 .tb-cell:nth-child(3n) {
+  border-right: 0;
+}
+
+.tb-wide {
+  grid-column: span 2;
   border-right: 0;
 }
 
@@ -1595,6 +1541,10 @@ a.tb-value:hover {
 
   .tb-company {
     grid-column: 1 / -1;
+  }
+
+  .tb-wide {
+    grid-column: auto;
   }
 
   .tb-cell:nth-child(3n) {

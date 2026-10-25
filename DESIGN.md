@@ -14,7 +14,7 @@ This file is the source of truth for how the site looks. When you change the UI,
 2. **Real work only.** Every photo shows a real TAS part, machine or piece of equipment. No AI-generated or stock "industrial" imagery, ever.
 3. **Red is a redline.** Red marks the one thing to act on (primary button, active nav item, key label). If everything is red, nothing is.
 4. **Square and flat.** `border-radius: 0` everywhere. No box shadows, no gradients, no glows.
-5. **No location.** The site never names a city or address. Contact is by phone, email and the contact form.
+5. **No location or phone number.** The sites never name a city or address and never show a phone number. Every "get in touch" action goes to the contact form on tasolutions.com/contact. The email address appears only in the footer.
 6. **Copy stays the company's.** Page text lives in `src/content.ts`. Design changes don't rewrite copy.
 
 ---
@@ -142,14 +142,14 @@ For figures whose source photo is only about 200px wide (like the Slat Washer ma
 ### Process cell (`.process-cell`)
 On navy: a `STEP NN` label (or `MODE NN`, `PART NN` on the sister sites), an h3 and optional body text, in a grid of cells separated by `--rule-dark`. Use `.process-grid` for three columns and `.process-grid-4` for four. Don't repeat the h3 text in the label. The automation process steps use the same `STEP NN` label beside a figure plate.
 
-### Call to action (`CallToAction` in `Home.tsx`)
-A flat red band, white text, a white primary-inverse button (`.btn-white`) and an outline-light button.
+### Call to action (`CallToAction.tsx`)
+A flat red band with a mono label, a heading, one line of body text, and a single white button (`.btn-white`) that goes to the contact form.
 
 ### Contact form (`ContactForm.tsx`)
-A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit; the success state replaces the form with a short confirmation and a phone number.
+A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit with nothing beside it (don't show the destination email). The success state replaces the form with a short confirmation.
 
 ### Footer as title block (`Layout.tsx`)
-The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `SISTER COMPANIES`, `ESTABLISHED`, `PHONE`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
+The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `SISTER COMPANIES`, `ESTABLISHED`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
 
 ---
 

@@ -38,8 +38,8 @@ export default function SlatWasher() {
               <a href="#specs" className="btn btn-primary">
                 See specifications →
               </a>
-              <a href={company.phoneHref} className="btn btn-outline-light">
-                Call {company.phone}
+              <a href={`${externalSites.tas.href}contact`} className="btn btn-outline-light">
+                Get in touch
               </a>
             </div>
           </div>

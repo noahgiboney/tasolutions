@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from 'react'
-import { company } from '../content.ts'
 import { detectSite } from '../site.ts'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
@@ -60,9 +59,7 @@ export default function ContactForm() {
       <div className="form-success" role="status">
         <p className="label">Message sent</p>
         <h3>Thanks, we'll be in touch soon.</h3>
-        <p>
-          Need a faster answer? Call us at <a href={company.phoneHref}>{company.phone}</a>.
-        </p>
+        <p>We read every message and reply by email.</p>
         <button type="button" className="btn btn-outline" onClick={() => setStatus('idle')}>
           Send another message
         </button>
@@ -100,7 +97,6 @@ export default function ContactForm() {
         <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
           {status === 'sending' ? 'Sending…' : 'Send message →'}
         </button>
-        <span className="form-note">Goes straight to {company.email}</span>
       </div>
     </form>
   )

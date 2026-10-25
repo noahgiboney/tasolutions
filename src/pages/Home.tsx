@@ -32,9 +32,9 @@ export default function Home() {
               <Link to="/automation" className="btn btn-primary">
                 See our machines →
               </Link>
-              <a href={company.phoneHref} className="btn btn-outline-light">
-                Call {company.phone}
-              </a>
+              <Link to="/contact" className="btn btn-outline-light">
+                Get in touch
+              </Link>
             </div>
           </div>
           <Figure
@@ -121,7 +121,7 @@ export function CallToAction() {
   return (
     <SharedCallToAction
       contact={
-        <Link to="/contact" className="btn btn-outline-light">
+        <Link to="/contact" className="btn btn-white">
           Contact us →
         </Link>
       }

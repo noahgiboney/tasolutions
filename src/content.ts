@@ -4,8 +4,6 @@ export const company = {
   name: 'Tooling & Assembly Solutions',
   shortName: 'TAS',
   founded: 1996,
-  phone: '(805) 328-4750',
-  phoneHref: 'tel:+18053284750',
   email: 'email@tasolutions.com',
 }
 

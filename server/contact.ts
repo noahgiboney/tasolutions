@@ -60,7 +60,7 @@ export async function handleContact(raw: unknown, env: ContactEnv): Promise<Cont
     console.error('Contact form: RESEND_API_KEY is not set')
     return {
       status: 500,
-      body: { ok: false, error: "The contact form isn't set up yet. Please call or email us." },
+      body: { ok: false, error: "The contact form isn't available right now. Please try again later." },
     }
   }
 
@@ -96,7 +96,7 @@ export async function handleContact(raw: unknown, env: ContactEnv): Promise<Cont
     console.error('Contact form: Resend error', error)
     return {
       status: 502,
-      body: { ok: false, error: "Your message couldn't be sent. Please try again or call us." },
+      body: { ok: false, error: "Your message couldn't be sent. Please try again in a moment." },
     }
   }
   return { status: 200, body: { ok: true } }
