@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import Carousel from '../components/Carousel.tsx'
-import { ArrowRight, Phone } from '../components/Icons.tsx'
+import DimensionLine from '../components/DimensionLine.tsx'
+import Figure from '../components/Figure.tsx'
 import { company, home } from '../content.ts'
 
 export default function Home() {
@@ -8,78 +9,93 @@ export default function Home() {
     <>
       <title>{`${company.name} | Precision Machining & Automation`}</title>
 
-      <section className="hero">
-        <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Precision machining · Custom automation</p>
-          <h1>Tooling &amp; Assembly Solutions</h1>
-          <p className="hero-lead">
-            Machined parts and automated assembly machines for medical, aerospace, defense and
-            automotive manufacturers. Built in {company.location} since {company.founded}.
-          </p>
-          <div className="hero-actions">
-            <Link to="/automation" className="btn btn-red">
-              See our machines <ArrowRight size={18} />
-            </Link>
-            <Link to="/contact" className="btn btn-ghost-light">
-              Get in touch
-            </Link>
+      <section className="sheet hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <p className="label label-dark">
+              DWG TAS-{company.founded} · {company.location}
+            </p>
+            <h1>Precision parts. Purpose-built machines.</h1>
+            <p className="hero-lead">
+              {company.name} machines parts and builds automated assembly equipment for medical,
+              aerospace, defense and automotive manufacturers.
+            </p>
+            <DimensionLine value='±.0001"' />
+            <div className="hero-actions">
+              <Link to="/automation" className="btn btn-primary">
+                See our machines →
+              </Link>
+              <a href={company.phoneHref} className="btn btn-outline-light">
+                Call {company.phone}
+              </a>
+            </div>
           </div>
+          <Figure
+            src="/images/work/lyophilizing-machine.webp"
+            alt="Lyophilizing machine built by TAS in a clean room"
+            n={1}
+            caption="Lyophilizing machine"
+            meta="Clean room"
+            onDark
+            eager
+          />
         </div>
       </section>
 
-      <div className="container">
-        <dl className="stats">
-          {home.stats.map((s) => (
-            <div key={s.label} className="stat">
-              <dt>{s.label}</dt>
-              <dd>{s.value}</dd>
-            </div>
-          ))}
-        </dl>
+      <div className="spec-strip-wrap">
+        <div className="container">
+          <dl className="spec-strip">
+            {home.stats.map((s) => (
+              <div key={s.label}>
+                <dt>{s.label}</dt>
+                <dd>{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
 
       <section className="section">
         <div className="container split">
           <div>
-            <p className="eyebrow">What we do</p>
+            <p className="label">01 / What we do</p>
             <h2 className="section-title">{home.intro.title}</h2>
           </div>
           <p className="lead">{home.intro.body}</p>
         </div>
       </section>
 
-      <section className="section section-steel">
+      <section className="section section-grid">
         <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Featured work</p>
-              <h2 className="section-title">Parts &amp; machines we've built</h2>
-            </div>
-          </div>
+          <p className="label">02 / Featured work</p>
+          <h2 className="section-title">Parts and machines we've built</h2>
           <Carousel label="Featured work">
-            {home.work.map((item) => (
-              <li key={item.title} className="work-card">
-                <div className={`work-card-media fit-${item.fit}`}>
-                  <img src={item.image} alt={item.title} loading="lazy" draggable={false} />
-                </div>
-                <div className="work-card-body">
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                </div>
+            {home.work.map((item, i) => (
+              <li key={item.title} className="work-item">
+                <Figure
+                  src={item.image}
+                  alt={item.title}
+                  n={i + 2}
+                  caption={item.title}
+                  fit={item.fit}
+                />
+                <p className="work-body">{item.body}</p>
               </li>
             ))}
           </Carousel>
         </div>
       </section>
 
-      <section className="section section-navy">
+      <section className="section sheet">
         <div className="container">
-          <p className="eyebrow eyebrow-light">How we work</p>
+          <p className="label label-dark">03 / How we work</p>
           <h2 className="section-title">From drawing to installed equipment</h2>
           <ol className="process-grid">
             {home.process.map((step, i) => (
-              <li key={step.title} className="process-card">
-                <span className="process-num">{String(i + 1).padStart(2, '0')}</span>
+              <li key={step.title} className="process-cell">
+                <span className="label label-dark">
+                  Step {String(i + 1).padStart(2, '0')}
+                </span>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
               </li>
@@ -98,15 +114,16 @@ export function CallToAction() {
     <section className="cta">
       <div className="container cta-inner">
         <div>
+          <p className="cta-label">Request a quote</p>
           <h2>Have a project in mind?</h2>
           <p>Large or small, every job gets the same care in planning and processing.</p>
         </div>
         <div className="cta-actions">
           <a href={company.phoneHref} className="btn btn-white">
-            <Phone size={18} /> {company.phone}
+            Call {company.phone}
           </a>
-          <Link to="/contact" className="btn btn-ghost-light">
-            Contact us
+          <Link to="/contact" className="btn btn-outline-light">
+            Contact us →
           </Link>
         </div>
       </div>

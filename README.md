@@ -17,6 +17,10 @@ npm run preview   # serve the built site locally
 npm run lint
 ```
 
+## Design
+
+The site follows the "Blueprint" design spec in [DESIGN.md](DESIGN.md): colors, type, components and imagery rules. [AGENTS.md](AGENTS.md) (and `CLAUDE.md`, which imports it) tells AI coding agents to follow that spec when they change the site.
+
 ## Where things live
 
 - `src/content.ts`: all page copy, machine specs, contact details and document links. Edit text here.

@@ -1,20 +1,34 @@
 import type { ReactNode } from 'react'
 
 type Props = {
-  eyebrow: string
+  /** Sheet number shown in the drawing metadata, e.g. "03". */
+  sheet: string
+  label: string
   title: string
-  image: string
+  meta?: string[]
   children?: ReactNode
 }
 
-export default function PageHero({ eyebrow, title, image, children }: Props) {
+// Navy drawing-sheet page header (DESIGN.md §6, "Page header"). No photos.
+export default function PageHero({ sheet, label, title, meta = [], children }: Props) {
   return (
-    <section className="page-hero" style={{ backgroundImage: `url(${image})` }}>
+    <section className="sheet page-hero">
       <div className="container page-hero-inner">
-        <p className="eyebrow eyebrow-light">{eyebrow}</p>
+        <p className="label label-dark">
+          Sheet {sheet} · {label}
+        </p>
         <h1>{title}</h1>
         {children && <div className="page-hero-lead">{children}</div>}
       </div>
+      {meta.length > 0 && (
+        <div className="sheet-meta">
+          <div className="container sheet-meta-row">
+            {meta.map((m) => (
+              <span key={m}>{m}</span>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   )
 }

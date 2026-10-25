@@ -1,23 +1,21 @@
 import { Link } from 'react-router'
 import type { Machine } from '../content.ts'
-import { ArrowRight } from './Icons.tsx'
+import Figure from './Figure.tsx'
 
-export default function MachineCard({ machine }: { machine: Machine }) {
+export default function MachineCard({ machine, n }: { machine: Machine; n?: number }) {
   const rate = machine.specs.find((s) => s.label === 'Production rate')?.value
   return (
-    <Link to={`/automation/${machine.slug}`} className="machine-card">
-      <div className="machine-card-media">
-        <img src={machine.image} alt={`${machine.name} machine`} loading="lazy" />
-      </div>
-      <div className="machine-card-body">
-        <div>
-          <h3>{machine.name}</h3>
-          {rate && <p>{rate}</p>}
-        </div>
-        <span className="machine-card-arrow" aria-hidden="true">
-          <ArrowRight size={18} />
-        </span>
-      </div>
+    <Link to={`/automation/${machine.slug}`} className="machine-card" aria-label={machine.name}>
+      <Figure
+        src={machine.image}
+        alt={`${machine.name} machine`}
+        n={n}
+        caption={machine.name}
+        meta={rate}
+      />
+      <span className="machine-card-cta" aria-hidden="true">
+        View specs →
+      </span>
     </Link>
   )
 }
