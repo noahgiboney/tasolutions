@@ -15,10 +15,10 @@ export default function Home() {
             <p className="label label-dark">
               DWG TAS-{company.founded} · {company.location}
             </p>
-            <h1>Precision parts. Purpose-built machines.</h1>
+            <h1>{company.name}</h1>
             <p className="hero-lead">
-              {company.name} machines parts and builds automated assembly equipment for medical,
-              aerospace, defense and automotive manufacturers.
+              Precision machining and automated assembly machines for medical, aerospace, defense
+              and automotive manufacturers.
             </p>
             <DimensionLine value='±.0001"' />
             <div className="hero-actions">
