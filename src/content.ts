@@ -25,7 +25,7 @@ export const home = {
     { value: '1996', label: 'Doors opened' },
     { value: '±.0001"', label: 'Dimensional precision' },
     { value: '5-axis', label: 'Haas machining center' },
-    { value: '30 yrs', label: 'Machine building experience' },
+    { value: '40 yrs', label: 'Machine building experience' },
   ],
   work: [
     {
@@ -87,7 +87,7 @@ export const story = {
   story: [
     'Welcome to the Tooling and Assembly Solutions Home Page. At Tooling and Assembly we take pride in the fact we produce some of the most advanced automation systems in the world. Whether your business is Automotive or Medical Devices, we have what it takes to get the job done.',
     'Since 1996, when we opened our doors, we have strived to push the limits of new technology, taking on jobs that at some time seem impossible. Our latest acquisition, a 5-axis Haas machining center, sums up our commitment to technology driven machining & machine building.',
-    'In combination with 30 years of experience in the machine building business we are confident no job is too large, small, or complicated for our abilities.',
+    'In combination with 40 years of experience in the machine building business we are confident no job is too large, small, or complicated for our abilities.',
   ],
   dream: [
     'Discover the secrets behind our unparalleled success and witness the cutting-edge technologies that power our revolutionary machines. Our site offers in-depth case studies, testimonials, and interactive demonstrations that showcase the real-world applications of our automation solutions.',
