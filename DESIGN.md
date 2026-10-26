@@ -2,7 +2,7 @@
 
 The site should read like a clean engineering drawing: navy drawing sheets with a fine grid, hairline rules, typewriter-style labels, and red used the way a checker uses a red pen. It's a precision machine shop, so the design is precise too: square corners, exact alignment, nothing decorative that doesn't look like it came off a drawing.
 
-The same design covers all three sites: tasolutions.com, slatwasher.com and automationdreamteam.com (see AGENTS.md for how one app serves all three). The sister sites use the same tokens and components. Their only differences are the brand in the header (the TAS logo beside the site name, with "By TAS" underneath), in-page anchor links instead of page links, and Contact pointing to tasolutions.com/contact.
+The same design covers all three sites: tasolutions.com, slatwasher.com and automationdreamteam.com (see AGENTS.md for how one app serves all three). The sister sites use the same tokens and components. Their only differences are the brand in the header (the TAS logo beside the site name, with "By TAS" underneath), in-page anchor links (with smooth scrolling) instead of page links, and Contact pointing to tasolutions.com/contact.
 
 This file is the source of truth for how the site looks. When you change the UI, follow it. If a change needs something the spec doesn't cover, add it here in the same commit.
 
@@ -134,7 +134,7 @@ A row of equal cells split by hairlines, each with a mono label and a mono value
 Rows split by hairlines: mono uppercase label on the left, Plex Sans 500 value on the right. Used for machine specifications.
 
 ### Machine card (`MachineCard.tsx`)
-A figure plate that links to the machine page. Caption: machine name, plus production rate as metadata. On hover the frame turns red and the image scales to 1.03.
+A figure plate that links to the machine page. Caption: machine name, with the production rate always on its own line below it, so every card has the same caption height. Cards in a row stretch to equal height. On hover the frame turns red and the image scales to 1.03.
 
 ### Small plate (`.plate-small`)
 For figures whose source photo is only about 200px wide (like the Slat Washer machine). Caps the plate at 420px so the image is never shown much past 2× its size.

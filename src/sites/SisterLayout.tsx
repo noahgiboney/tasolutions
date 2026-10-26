@@ -49,7 +49,7 @@ export default function SisterLayout({ logo, name, note, anchors, sibling, rev, 
           </a>
         }
       />
-      <main id="main">
+      <main id="main" className="sister-main">
         {children}
         <CallToAction
           {...cta}

@@ -25,7 +25,7 @@ export default function Contact() {
       <section className="section section-grid">
         <div className="container">
           <p className="label">02 / Our sites</p>
-          <h2 className="section-title">One company, two sites</h2>
+          <h2 className="section-title">More from TAS</h2>
           <div className="company-grid">
             <div className="company">
               <Figure

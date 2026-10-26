@@ -852,6 +852,13 @@ a {
 }
 
 /* ---------- Sister sites ---------- */
+/* Single-page sites: header links glide to their section. Not on
+   tasolutions.com, where it would animate the jump to top on page change.
+   Turned off for reduced motion at the bottom of this file. */
+html:has(.sister-main) {
+  scroll-behavior: smooth;
+}
+
 /* Small source photos (about 200px wide) get a narrower plate (DESIGN.md §7). */
 .plate-small {
   width: 100%;
@@ -1042,13 +1049,26 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
 }
 
+/* Cards in a row share one height, so short captions don't leave a step. */
+.machine-grid > li {
+  display: flex;
+}
+
 .machine-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-decoration: none;
 }
 
 .machine-card .plate {
+  flex: 1;
   transition: border-color var(--ease);
+}
+
+/* Name on one line, production rate always on the next. */
+.machine-card .plate-caption {
+  flex-direction: column;
 }
 
 .machine-card:hover .plate {
