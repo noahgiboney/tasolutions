@@ -13,7 +13,7 @@ export default function DreamTeam() {
       name={dreamTeam.name}
       note={`The automation team at ${company.name}, building machines since ${company.founded}.`}
       anchors={[
-        { label: 'The team', href: '#team' },
+        { label: 'The Team', href: '#team' },
         { label: 'Machines', href: '#machines' },
       ]}
       sibling={externalSites.products}

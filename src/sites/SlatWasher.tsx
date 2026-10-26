@@ -11,7 +11,7 @@ export default function SlatWasher() {
       name={slatWasher.name}
       note={`A Tooling & Assembly Solutions product. ${slatWasher.patent}.`}
       anchors={[
-        { label: 'The machine', href: '#machine' },
+        { label: 'The Machine', href: '#machine' },
         { label: 'Specifications', href: '#specs' },
         { label: 'Modes', href: '#modes' },
       ]}
