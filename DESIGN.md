@@ -114,6 +114,9 @@ A navy drawing panel with the grid background. Used for the home hero, page head
 ### Page header (`PageHero.tsx`)
 A `.sheet` with: a metadata label (`SHEET 03 · AUTOMATION`), the page title, an optional lead, and a bottom strip of mono metadata cells separated by `--rule-dark`. No background photos.
 
+### Not found page (`NotFound.tsx`)
+A full-height `.sheet` for any address that isn't a page, on all three sites. Left: the `SHEET 404 · NOT FOUND` label, title, lead, the requested path in mono, and a Back to home button. Right: outlined `404` numerals in `--dim` (hidden below 860px) above a hairline list of suggested pages. The sister sites show it for every path except `/`, with their section links and tasolutions.com as suggestions.
+
 ### Figure plate (`Figure.tsx`)
 The standard way to show any image. A 1px frame, 8px inner padding, the image, then a mono caption bar: `FIG. 03 — SWAB ASSEMBLY` on the left and optional metadata (`45/MIN`) on the right. Number figures in order on each page.
 

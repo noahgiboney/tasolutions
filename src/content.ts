@@ -8,9 +8,9 @@ export const company = {
 }
 
 export const externalSites = {
-  tas: { label: 'Tooling & Assembly Solutions', href: 'https://tasolutions.com/' },
-  products: { label: 'Slat Washer', href: 'https://slatwasher.com/' },
-  dreamTeam: { label: 'Automation Dream Team', href: 'https://automationdreamteam.com/' },
+  tas: { label: 'Tooling & Assembly Solutions', href: 'https://www.tasolutions.com/' },
+  products: { label: 'Slat Washer', href: 'https://www.slatwasher.com/' },
+  dreamTeam: { label: 'Automation Dream Team', href: 'https://www.automationdreamteam.com/' },
 }
 
 // slatwasher.com (copy from the 2023 Slat Washer page)
@@ -142,6 +142,15 @@ export const story = {
     'The Automation Dream Team is how we build machines at Tooling & Assembly Solutions. Superior machinery takes a superior group of resources: engineers, technicians, HAAS machines and a supply chain of reliable quality components, each hand selected for being the best available to get the job done.',
     'It has its own site, automationdreamteam.com, where you can read more about the people and machines behind our automation work.',
   ],
+}
+
+// Error page for addresses that don't exist, on all three sites
+export const notFound = {
+  label: 'Sheet 404 · Not found',
+  title: "This page isn't on the drawing",
+  lead: 'The address may be mistyped, or the page moved when we rebuilt the site.',
+  pathLabel: 'Requested',
+  linksLabel: 'Try one of these',
 }
 
 // "Our sites" section on the contact page
