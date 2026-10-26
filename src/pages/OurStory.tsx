@@ -49,7 +49,7 @@ export default function OurStory() {
       <section className="section">
         <div className="container feature feature-reverse">
           <div className="feature-text">
-            <p className="label">02 / Sister company</p>
+            <p className="label">02 / The Dream Team</p>
             <h2 className="section-title">Our Dream</h2>
             {story.dream.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
@@ -60,7 +60,7 @@ export default function OurStory() {
               target="_blank"
               rel="noreferrer"
             >
-              Go to Automation Dream Team ↗
+              Visit automationdreamteam.com ↗
             </a>
           </div>
           <Figure

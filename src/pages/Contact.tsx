@@ -1,7 +1,7 @@
 import ContactForm from '../components/ContactForm.tsx'
 import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
-import { company, externalSites } from '../content.ts'
+import { company, externalSites, ourSites } from '../content.ts'
 
 export default function Contact() {
   return (
@@ -24,8 +24,8 @@ export default function Contact() {
 
       <section className="section section-grid">
         <div className="container">
-          <p className="label">02 / Our companies</p>
-          <h2 className="section-title">Two shops, one team</h2>
+          <p className="label">02 / Our sites</p>
+          <h2 className="section-title">One company, two sites</h2>
           <div className="company-grid">
             <div className="company">
               <Figure
@@ -36,7 +36,7 @@ export default function Contact() {
                 fit="contain"
                 ratio="16 / 9"
               />
-              <p>Precision machining and automation machine building.</p>
+              <p>{ourSites.tas}</p>
             </div>
             <a
               className="company company-link"
@@ -52,7 +52,7 @@ export default function Contact() {
                 fit="contain"
                 ratio="16 / 9"
               />
-              <p>State-of-the-art automated machines and systems.</p>
+              <p>{ourSites.dreamTeam}</p>
             </a>
           </div>
         </div>

@@ -9,7 +9,7 @@ const tasBase = externalSites.tas.href.replace(/\/$/, '')
 export default function DreamTeam() {
   return (
     <SisterLayout
-      logo="/images/brand/automation-dreamteam-logo.webp"
+      logo="/images/brand/tas-logo.webp"
       name={dreamTeam.name}
       note={`The automation team at ${company.name}, building machines since ${company.founded}.`}
       anchors={[
@@ -42,11 +42,12 @@ export default function DreamTeam() {
             </div>
           </div>
           <Figure
-            src="/images/dreamteam/assembly-floor.webp"
-            alt="Automated assembly lines on a clean room floor"
+            src="/images/brand/automation-dreamteam-logo.webp"
+            alt="Automation Dreamteam logo"
             n={1}
-            caption="Assembly floor"
-            meta="Clean room"
+            caption="Automation Dream Team"
+            meta={`By ${company.shortName}`}
+            fit="contain"
             onDark
             eager
           />

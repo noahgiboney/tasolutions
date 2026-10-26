@@ -7,7 +7,7 @@ type Props = {
   logo: string
   name: string
   note: string
-  /** Two link columns, e.g. Pages and Sister companies. */
+  /** Two link columns, e.g. Pages and Our sites. */
   columns: { label: string; links: ReactNode }[]
   /** Right side of the bottom row, like a drawing revision note. */
   rev: string

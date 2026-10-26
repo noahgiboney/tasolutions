@@ -2,7 +2,7 @@
 
 The site should read like a clean engineering drawing: navy drawing sheets with a fine grid, hairline rules, typewriter-style labels, and red used the way a checker uses a red pen. It's a precision machine shop, so the design is precise too: square corners, exact alignment, nothing decorative that doesn't look like it came off a drawing.
 
-The same design covers all three sites: tasolutions.com, slatwasher.com and automationdreamteam.com (see AGENTS.md for how one app serves all three). The sister sites use the same tokens and components. Their only differences are the brand in the header (Slat Washer uses the TAS logo; Dream Team uses the ADT logo), in-page anchor links instead of page links, and Contact pointing to tasolutions.com/contact.
+The same design covers all three sites: tasolutions.com, slatwasher.com and automationdreamteam.com (see AGENTS.md for how one app serves all three). The sister sites use the same tokens and components. Their only differences are the brand in the header (the TAS logo beside the site name, with "By TAS" underneath), in-page anchor links instead of page links, and Contact pointing to tasolutions.com/contact.
 
 This file is the source of truth for how the site looks. When you change the UI, follow it. If a change needs something the spec doesn't cover, add it here in the same commit.
 
@@ -149,7 +149,7 @@ A flat red band with a mono label, a heading, one line of body text, and a singl
 A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit with nothing beside it (don't show the destination email). The success state replaces the form with a short confirmation.
 
 ### Footer as title block (`Layout.tsx`)
-The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `SISTER COMPANIES`, `ESTABLISHED`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
+The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `OUR SITES`, `ESTABLISHED`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
 
 ---
 

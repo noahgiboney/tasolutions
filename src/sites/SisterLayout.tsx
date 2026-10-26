@@ -78,7 +78,7 @@ export default function SisterLayout({ logo, name, note, anchors, sibling, rev, 
             ),
           },
           {
-            label: 'Sister companies',
+            label: 'Our sites',
             links: (
               <>
                 <ExternalItem {...externalSites.tas} />

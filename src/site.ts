@@ -33,7 +33,7 @@ export const siteMeta: Record<SiteId, SiteMeta> = {
 const hostToSite: Record<string, SiteId> = {
   'slatwasher.com': 'slatwasher',
   'automationdreamteam.com': 'dreamteam',
-  // Local preview: http://slatwasher.localhost:5179, http://dreamteam.localhost:5179
+  // Local preview: http://slatwasher.localhost:5173, http://dreamteam.localhost:5173
   'slatwasher.localhost': 'slatwasher',
   'dreamteam.localhost': 'dreamteam',
 }

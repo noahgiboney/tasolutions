@@ -27,7 +27,7 @@ Hard rules:
 Routing happens in the app, not in `vercel.json`: Vercel serves `index.html` before any `vercel.json` rule runs, so a host-based rewrite would never fire for `/`. Don't try to move it there.
 
 Preview a sister site:
-- Local: `http://slatwasher.localhost:5179` or `http://dreamteam.localhost:5179` (or add `?site=slatwasher` / `?site=dreamteam` to any URL).
+- Local: `http://slatwasher.localhost:5173` or `http://dreamteam.localhost:5173` (or add `?site=slatwasher` / `?site=dreamteam` to any URL).
 - Vercel preview deploys: add `?site=slatwasher` or `?site=dreamteam`.
 
 To add a domain: add it to `hostToSite` and `siteMeta` in `src/site.ts`, add an entry component under `src/sites/`, and attach the domain to the Vercel project.

@@ -137,10 +137,17 @@ export const story = {
     'Since 1996, when we opened our doors, we have strived to push the limits of new technology, taking on jobs that at some time seem impossible. Our latest acquisition, a 5-axis Haas machining center, sums up our commitment to technology driven machining & machine building.',
     'In combination with 40 years of experience in the machine building business we are confident no job is too large, small, or complicated for our abilities.',
   ],
+  // The Dream Team is a TAS idea with its own domain, not a separate company.
   dream: [
-    'Discover the secrets behind our unparalleled success and witness the cutting-edge technologies that power our revolutionary machines. Our site offers in-depth case studies, testimonials, and interactive demonstrations that showcase the real-world applications of our automation solutions.',
-    "Join us on this inspiring voyage and unlock the potential to revolutionize your industry with Automation DreamTeam's state-of-the-art machines and systems. Embrace the future of automation and let us be your trusted partner in building a smarter, more efficient world. Visit us now and experience the power of innovation firsthand!",
+    'The Automation Dream Team is how we build machines at Tooling & Assembly Solutions. Superior machinery takes a superior group of resources: engineers, technicians, HAAS machines and a supply chain of reliable quality components, each hand selected for being the best available to get the job done.',
+    'It has its own site, automationdreamteam.com, where you can read more about the people and machines behind our automation work.',
   ],
+}
+
+// "Our sites" section on the contact page
+export const ourSites = {
+  tas: 'Precision machining and automation machine building.',
+  dreamTeam: 'Our approach to automation: the people and machines behind every TAS machine.',
 }
 
 export const automation = {

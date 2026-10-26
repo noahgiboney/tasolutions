@@ -84,7 +84,7 @@ export default function Layout() {
             ),
           },
           {
-            label: 'Sister companies',
+            label: 'Our sites',
             links: (
               <>
                 <ExternalItem {...externalSites.dreamTeam} />
