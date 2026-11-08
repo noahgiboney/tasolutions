@@ -2,11 +2,13 @@ import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
 import { company, externalSites, story } from '../content.ts'
 import { CallToAction } from './Home.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { tasPages } from '../seo.ts'
 
 export default function OurStory() {
   return (
     <>
-      <title>{`Our Story | ${company.name}`}</title>
+      <PageMeta {...tasPages.ourStory} />
       <PageHero
         sheet="02"
         label="Our story"
@@ -65,7 +67,7 @@ export default function OurStory() {
           </div>
           <Figure
             src="/images/brand/automation-dreamteam-logo.webp"
-            alt="Automation Dreamteam logo"
+            alt="Automation Dream Team logo"
             n={2}
             caption="Automation Dream Team"
             fit="contain"

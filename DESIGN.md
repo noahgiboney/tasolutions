@@ -149,10 +149,13 @@ On navy: a `STEP NN` label (or `MODE NN`, `PART NN` on the sister sites), an h3 
 A flat red band with a mono label, a heading, one line of body text, and a single white button (`.btn-white`) that goes to the contact form.
 
 ### Contact form (`ContactForm.tsx`)
-A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. One `.btn-primary` submit with nothing beside it (don't show the destination email). The success state replaces the form with a short confirmation.
+A white panel with a 1px navy frame and 3px red top rule. Fields are square inputs with a 1px `--rule` border (navy bottom edge), mono uppercase labels, and "(optional)" in muted sentence case. Focus is a 2px red outline. Errors show under the field in `--red-600` and turn its border red. A short `.form-note` in `--muted` with a link to the privacy policy sits above the submit. One `.btn-primary` submit with nothing beside it (don't show the destination email). The success state replaces the form with a short confirmation.
 
 ### Footer as title block (`Layout.tsx`)
-The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `OUR SITES`, `ESTABLISHED`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note.
+The footer is styled like a drawing's title block: a grid of bordered cells, each with a mono label (`COMPANY`, `PAGES`, `OUR SITES`, `ESTABLISHED`, `EMAIL`) and its value. The copyright line sits in the last row like a revision note, followed by an underlined Privacy link (tasolutions.com/privacy on all three sites).
+
+### Privacy policy (`Privacy.tsx`)
+A page header, then one `.split` row per policy section (`.legal-row`, split by hairlines): a `NN / POLICY` label and a small h2 on the left, paragraphs capped at 65ch on the right. Copy is `privacy` in `content.ts`; update its date when the text changes.
 
 ---
 
@@ -163,7 +166,9 @@ The footer is styled like a drawing's title block: a grid of bordered cells, eac
 - Many photos are small (200×125 px). Never display an image wider than about 2× its native width. Small photos go in small plates.
 - CAD renders and transparent PNGs use `.fit-contain` (white background, contained). Photos use `object-fit: cover` at 4:3.
 - Store images in `public/images/<section>/` with kebab-case names. Convert large PNG/JPG to WebP (`cwebp -q 80 -resize 1400 0`). Keep files under about 150 KB.
-- Every image needs meaningful `alt` text unless it's purely decorative.
+- Every image needs meaningful `alt` text unless it's purely decorative. Describe what's in the photo, not just its caption.
+- **Share images** (`public/images/og/`, 1200×630 JPG): a navy grid sheet with the site's label, name and lead on the left and a real photo in a figure plate on the right. One per site.
+- **Icons** are the real logos centered on white squares (`public/icons/`, 32/180/192/512 px).
 
 ---
 
@@ -192,5 +197,5 @@ Minimal. Hover transitions are 150 to 200ms on color, border-color and image tra
 2. Create `src/pages/YourPage.tsx`. Start with `<PageHero sheet="NN" label="..." title="..." />`, then alternate `.section` (paper) and `.section.section-grid` (paper-2). Use `.sheet` sections sparingly, at most one besides the header.
 3. Show images with `<Figure>`.
 4. Add the route in `src/App.tsx` and, if it belongs in the nav, in `navItems` in `src/components/Layout.tsx`.
-5. Set the page `<title>` inside the component (React 19 hoists it).
+5. Add the page's title and description to `pageMeta` in `content.ts` and `tasPages` in `src/seo.ts`, and render `<PageMeta {...tasPages.yourPage} />` in the component. That also gives it a sitemap entry and its own HTML head (see AGENTS.md, SEO).
 6. Run `npm run build` and `npm run lint`, and check the page at 375px and desktop widths.

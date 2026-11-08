@@ -1,4 +1,6 @@
 import { useState, type FormEvent } from 'react'
+import { Link } from 'react-router'
+import { privacy } from '../content.ts'
 import { detectSite } from '../site.ts'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
@@ -92,6 +94,10 @@ export default function ContactForm() {
           {serverError}
         </p>
       )}
+
+      <p className="form-note">
+        {privacy.formNote} <Link to="/privacy">Privacy policy</Link>
+      </p>
 
       <div className="form-actions">
         <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>

@@ -1,8 +1,10 @@
 import { Link, useParams } from 'react-router'
 import Figure from '../components/Figure.tsx'
 import MachineCard from '../components/MachineCard.tsx'
-import { company, machines } from '../content.ts'
+import { machines } from '../content.ts'
 import NotFound from './NotFound.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { machinePage } from '../seo.ts'
 
 export default function MachineDetail() {
   const { slug } = useParams()
@@ -16,7 +18,7 @@ export default function MachineDetail() {
 
   return (
     <>
-      <title>{`${machine.name} | ${company.name}`}</title>
+      <PageMeta {...machinePage(machine)} />
 
       <section className="sheet page-hero">
         <div className="container page-hero-inner">

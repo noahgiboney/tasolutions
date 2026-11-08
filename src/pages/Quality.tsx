@@ -1,12 +1,14 @@
 import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
-import { company, quality } from '../content.ts'
+import { quality } from '../content.ts'
 import { CallToAction } from './Home.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { tasPages } from '../seo.ts'
 
 export default function Quality() {
   return (
     <>
-      <title>{`Quality | ${company.name}`}</title>
+      <PageMeta {...tasPages.quality} />
       <PageHero
         sheet="04"
         label="Quality"

@@ -2,6 +2,8 @@ import Figure from '../components/Figure.tsx'
 import MachineCard from '../components/MachineCard.tsx'
 import { company, dreamTeam, externalSites, machines } from '../content.ts'
 import SisterLayout from './SisterLayout.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { sisterPages } from '../seo.ts'
 
 const tasBase = externalSites.tas.href.replace(/\/$/, '')
 
@@ -24,7 +26,7 @@ export default function DreamTeam() {
         body: 'Every job gets the same care in planning and processing.',
       }}
     >
-      <title>{`${dreamTeam.name} | ${company.name}`}</title>
+      <PageMeta {...sisterPages.dreamteam} />
 
       <section className="sheet hero">
         <div className="container hero-grid">
@@ -43,7 +45,7 @@ export default function DreamTeam() {
           </div>
           <Figure
             src="/images/brand/automation-dreamteam-logo.webp"
-            alt="Automation Dreamteam logo"
+            alt="Automation Dream Team logo"
             n={1}
             caption="Automation Dream Team"
             meta={`By ${company.shortName}`}

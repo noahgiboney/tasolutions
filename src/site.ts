@@ -1,60 +1,28 @@
 // One build serves three domains. The visitor's hostname decides which site
 // renders (see AGENTS.md, "Three sites, one app").
 
-export type SiteId = 'tas' | 'slatwasher' | 'dreamteam'
+import { isSiteId, siteForHost, type SiteId } from './hosts.ts'
+import { iconFiles, sitePages, siteBrand } from './seo.ts'
 
-type SiteMeta = {
-  title: string
-  description: string
-  favicon: string
-}
-
-export const siteMeta: Record<SiteId, SiteMeta> = {
-  tas: {
-    title: 'Tooling & Assembly Solutions',
-    description:
-      'Tooling & Assembly Solutions: precision machining and custom automated assembly machines, built since 1996.',
-    favicon: '/favicon.png',
-  },
-  slatwasher: {
-    title: 'Slat Washer | Tooling & Assembly Solutions',
-    description:
-      'The Slat Washer by Tooling & Assembly Solutions: an automated, stainless steel machine that cleans filling-line slats for the pharmaceutical industry.',
-    favicon: '/favicon.png',
-  },
-  dreamteam: {
-    title: 'Automation Dream Team | Tooling & Assembly Solutions',
-    description:
-      'Automation Dream Team by Tooling & Assembly Solutions: hand-selected engineers, technicians, HAAS machines and suppliers building automated assembly machines.',
-    favicon: '/favicon-dreamteam.png',
-  },
-}
-
-const hostToSite: Record<string, SiteId> = {
-  'slatwasher.com': 'slatwasher',
-  'automationdreamteam.com': 'dreamteam',
-  // Local preview: http://slatwasher.localhost:5173, http://dreamteam.localhost:5173
-  'slatwasher.localhost': 'slatwasher',
-  'dreamteam.localhost': 'dreamteam',
-}
-
-function isSiteId(value: string | null): value is SiteId {
-  return value === 'tas' || value === 'slatwasher' || value === 'dreamteam'
-}
+export type { SiteId }
 
 export function detectSite(location: Location = window.location): SiteId {
   // ?site=slatwasher overrides the hostname, for Vercel preview URLs and local dev.
   const param = new URLSearchParams(location.search).get('site')
   if (isSiteId(param)) return param
-
-  const host = location.hostname.toLowerCase().replace(/^www\./, '')
-  return hostToSite[host] ?? 'tas'
+  return siteForHost(location.hostname)
 }
 
-/** Set the tab title, description and favicon before React renders. */
+/**
+ * Point the icons at the right site before React renders. In production each
+ * page's HTML already has the right <head> (server/seo-files.ts); this covers
+ * local dev and ?site= previews. Pages set their own title and description.
+ */
 export function applySiteMeta(site: SiteId) {
-  const meta = siteMeta[site]
-  document.title = meta.title
-  document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
-  document.querySelector('link[rel="icon"]')?.setAttribute('href', meta.favicon)
+  const icons = iconFiles(siteBrand[site].icon)
+  document.querySelector('link[rel="icon"][type="image/png"]')?.setAttribute('href', icons.png32)
+  document.querySelector('link[rel="apple-touch-icon"]')?.setAttribute('href', icons.apple)
+  if (site !== 'tas') {
+    document.title = sitePages[site][0].title
+  }
 }

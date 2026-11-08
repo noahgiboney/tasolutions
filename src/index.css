@@ -1529,6 +1529,42 @@ html:has(.sister-main) {
   font-weight: 600;
 }
 
+.form-note {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-note a {
+  color: var(--ink);
+}
+
+/* ---------- Privacy policy ---------- */
+.legal-row {
+  padding-block: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.legal-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.legal-row:last-child {
+  padding-bottom: 0;
+}
+
+.legal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.legal .stack p {
+  max-width: 65ch;
+}
+
 /* ---------- Footer (title block) ---------- */
 .site-footer {
   padding-block: 56px;
@@ -1614,6 +1650,15 @@ a.tb-value:hover {
 
 .tb-links a:hover {
   color: var(--red-on-dark);
+}
+
+.tb-rev a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.tb-rev a:hover {
+  color: #fff;
 }
 
 .tb-rev {

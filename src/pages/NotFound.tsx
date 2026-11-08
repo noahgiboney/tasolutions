@@ -1,5 +1,7 @@
 import { Link } from 'react-router'
-import { company, notFound } from '../content.ts'
+import { notFound } from '../content.ts'
+import PageMeta from '../components/PageMeta.tsx'
+import { notFoundPage } from '../seo.ts'
 
 type PageLink = { label: string; href: string }
 
@@ -34,7 +36,7 @@ export default function NotFound({ homeHref = '/', pages = tasPages, plainLinks 
 
   return (
     <section className="sheet not-found">
-      <title>{`Page not found | ${company.name}`}</title>
+      <PageMeta {...notFoundPage} noindex />
       <div className="container not-found-grid">
         <div>
           <p className="label label-dark">{notFound.label}</p>

@@ -2,6 +2,8 @@ import DimensionLine from '../components/DimensionLine.tsx'
 import Figure from '../components/Figure.tsx'
 import { company, externalSites, slatWasher } from '../content.ts'
 import SisterLayout from './SisterLayout.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { sisterPages } from '../seo.ts'
 
 // slatwasher.com
 export default function SlatWasher() {
@@ -23,7 +25,7 @@ export default function SlatWasher() {
         body: `Talk to the ${company.name} team about your filling line.`,
       }}
     >
-      <title>{`${slatWasher.name} | ${company.name}`}</title>
+      <PageMeta {...sisterPages.slatwasher} />
 
       <section className="sheet hero">
         <div className="container hero-grid">

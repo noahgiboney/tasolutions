@@ -94,6 +94,7 @@ export default function Layout() {
           },
         ]}
         rev={`DWG TAS-${company.founded}`}
+        privacy={<Link to="/privacy">Privacy</Link>}
       />
     </>
   )

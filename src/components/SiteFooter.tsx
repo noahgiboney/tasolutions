@@ -11,11 +11,13 @@ type Props = {
   columns: { label: string; links: ReactNode }[]
   /** Right side of the bottom row, like a drawing revision note. */
   rev: string
+  /** Privacy policy link, shown after the copyright. */
+  privacy: ReactNode
 }
 
 // Shared footer styled like a drawing's title block (DESIGN.md §6).
 // The copyright year comes from the visitor's clock, so it's always current.
-export default function SiteFooter({ logo, name, note, columns, rev }: Props) {
+export default function SiteFooter({ logo, name, note, columns, rev, privacy }: Props) {
   return (
     <footer className="site-footer sheet">
       <div className="container">
@@ -46,7 +48,7 @@ export default function SiteFooter({ logo, name, note, columns, rev }: Props) {
           </div>
           <div className="tb-cell tb-rev">
             <span>
-              © {currentYear} {company.name}
+              © {currentYear} {company.name} · {privacy}
             </span>
             <span>
               {rev} · Rev {currentYear}

@@ -2,11 +2,13 @@ import ContactForm from '../components/ContactForm.tsx'
 import Figure from '../components/Figure.tsx'
 import PageHero from '../components/PageHero.tsx'
 import { company, externalSites, ourSites } from '../content.ts'
+import PageMeta from '../components/PageMeta.tsx'
+import { tasPages } from '../seo.ts'
 
 export default function Contact() {
   return (
     <>
-      <title>{`Contact Us | ${company.name}`}</title>
+      <PageMeta {...tasPages.contact} />
       <PageHero sheet="05" label="Contact" title="Contact Us" />
 
       <section className="section" id="message">
@@ -46,7 +48,7 @@ export default function Contact() {
             >
               <Figure
                 src="/images/brand/automation-dreamteam-logo.webp"
-                alt="Automation Dreamteam logo"
+                alt="Automation Dream Team logo"
                 n={2}
                 caption={`${externalSites.dreamTeam.label} ↗`}
                 fit="contain"

@@ -7,6 +7,7 @@ import MachineDetail from './pages/MachineDetail.tsx'
 import Quality from './pages/Quality.tsx'
 import Contact from './pages/Contact.tsx'
 import NotFound from './pages/NotFound.tsx'
+import Privacy from './pages/Privacy.tsx'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="automation/:slug" element={<MachineDetail />} />
         <Route path="quality" element={<Quality />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

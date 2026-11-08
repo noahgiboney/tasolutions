@@ -115,6 +115,7 @@ export default function SisterLayout({ logo, name, note, anchors, sibling, rev, 
           },
         ]}
         rev={rev}
+        privacy={<a href={`${externalSites.tas.href}privacy`}>Privacy</a>}
       />
     </>
   )

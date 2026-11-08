@@ -4,11 +4,13 @@ import Carousel from '../components/Carousel.tsx'
 import DimensionLine from '../components/DimensionLine.tsx'
 import Figure from '../components/Figure.tsx'
 import { company, home, story } from '../content.ts'
+import PageMeta from '../components/PageMeta.tsx'
+import { tasPages } from '../seo.ts'
 
 export default function Home() {
   return (
     <>
-      <title>{`${company.name} | Precision Machining & Automation`}</title>
+      <PageMeta {...tasPages.home} />
 
       <section className="sheet hero">
         <div className="container hero-grid">
@@ -81,7 +83,7 @@ export default function Home() {
               <li key={item.title} className="work-item">
                 <Figure
                   src={item.image}
-                  alt={item.title}
+                  alt={item.alt}
                   n={i + 2}
                   caption={item.title}
                   fit={item.fit}

@@ -1,13 +1,15 @@
 import Figure from '../components/Figure.tsx'
 import MachineCard from '../components/MachineCard.tsx'
 import PageHero from '../components/PageHero.tsx'
-import { automation, company, machines } from '../content.ts'
+import { automation, machines } from '../content.ts'
 import { CallToAction } from './Home.tsx'
+import PageMeta from '../components/PageMeta.tsx'
+import { tasPages } from '../seo.ts'
 
 export default function Automation() {
   return (
     <>
-      <title>{`Automation | ${company.name}`}</title>
+      <PageMeta {...tasPages.automation} />
       <PageHero
         sheet="03"
         label="Automation"

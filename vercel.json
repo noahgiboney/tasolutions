@@ -56,11 +56,5 @@
       "destination": "/documents/certificate-of-conformance.pdf",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
-    }
   ]
 }

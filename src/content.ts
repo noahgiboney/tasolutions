@@ -78,36 +78,42 @@ export const home = {
   work: [
     {
       title: 'Stem Load Station',
+      alt: 'SolidWorks model of a stem load station beside a rotary dial, with its control panel',
       body: 'This station loads stems into a Pop up Turkey Timer',
       image: '/images/work/stem-load-station.webp',
       fit: 'contain',
     },
     {
       title: 'Lyophilizing Machine',
+      alt: 'Lyophilizing machine built by TAS, enclosed in clear panels in a clean room',
       body: 'This equipment was built to load lyospheres into sample test kits',
       image: '/images/work/lyophilizing-machine.webp',
       fit: 'cover',
     },
     {
       title: 'Military Ordnance Guidance',
+      alt: 'Two machined guidance components for military ordnance, one with tail fins',
       body: 'Used as guidance and propulsion fins',
       image: '/images/work/military-ordnance-guidance.jpg',
       fit: 'cover',
     },
     {
       title: 'Aerospace Navigation Platform',
+      alt: 'Machined aluminum navigation platform with a cone-shaped center pocket',
       body: 'Foundation platform for Navigation Gyro used in space shuttle travel',
       image: '/images/work/aerospace-navigation-platform.jpg',
       fit: 'cover',
     },
     {
       title: 'Facial Reconstruction Plates',
+      alt: 'Small star-shaped and chain-shaped surgical plates next to a penny for scale',
       body: 'Titanium plates used to support bone positioning',
       image: '/images/work/facial-reconstruction-plates.jpg',
       fit: 'cover',
     },
     {
       title: 'Micro Tube Cap Seating Tool',
+      alt: 'Machined aluminum micro tube cap seating tool and numbered hole plate',
       body: 'This tool locks the cap down on sample media for testing',
       image: '/images/work/micro-tube-cap-seating-tool.webp',
       fit: 'cover',
@@ -312,4 +318,101 @@ export const quality = {
       href: '/documents/quality-manual.pdf',
     },
   ],
+}
+
+// Tab titles and search/share descriptions for each tasolutions.com page.
+// The sister sites use slatWasher.description and dreamTeam.description.
+export const pageMeta = {
+  home: {
+    title: `${company.name} | Precision Machining & Automation`,
+    description:
+      'Tooling & Assembly Solutions: precision machining and custom automated assembly machines for medical, aerospace, defense and automotive manufacturers, since 1996.',
+  },
+  ourStory: {
+    title: `Our Story | ${company.name}`,
+    description:
+      'How Tooling & Assembly Solutions has machined precision parts and built automated assembly machines since 1996, and the Automation Dream Team behind them.',
+  },
+  automation: {
+    title: `Automation | ${company.name}`,
+    description:
+      'From development and design to fabrication, inspection, assembly and application engineering: how TAS builds custom automated assembly machines.',
+  },
+  quality: {
+    title: `Quality | ${company.name}`,
+    description:
+      'Quality at TAS: a Brown & Sharpe CNC coordinate measuring machine, PC-DMIS inspection software and first article inspection, plus our certificate of conformance and quality manual.',
+  },
+  contact: {
+    title: `Contact Us | ${company.name}`,
+    description:
+      'Contact Tooling & Assembly Solutions about precision machining or a custom automated assembly machine.',
+  },
+  privacy: {
+    title: `Privacy Policy | ${company.name}`,
+    description:
+      'What Tooling & Assembly Solutions collects through tasolutions.com, slatwasher.com and automationdreamteam.com, and how it is used.',
+  },
+  notFound: {
+    title: `Page not found | ${company.name}`,
+    description: notFound.lead,
+  },
+}
+
+/** Description for a machine page, built from its specs. */
+export function machineDescription(m: Machine) {
+  const get = (label: string) => m.specs.find((s) => s.label === label)?.value
+  return `${m.name}: a custom automated assembly machine built by ${company.name}. ${get('Production rate')}, ${get('Style')?.toLowerCase()} design, ${get('Controls')} controls.`
+}
+
+// Privacy policy, shared by all three sites (tasolutions.com/privacy).
+export const privacy = {
+  updated: 'November 8, 2026',
+  lead: 'This policy covers tasolutions.com, slatwasher.com and automationdreamteam.com. In short: we only collect what you send us through the contact form, and we only use it to reply.',
+  sections: [
+    {
+      title: 'What we collect',
+      body: [
+        'When you use the contact form, we receive your name, email address and message, plus your company and phone number if you add them, and which of our sites you sent it from.',
+        'Like any website, our hosting provider records basic request information, such as your IP address, browser type and the pages you load, to keep the sites running and secure.',
+      ],
+    },
+    {
+      title: 'How we use it',
+      body: [
+        'We use contact form details only to reply to you and to discuss the work you asked about. We do not sell your information, add you to a mailing list or share it for marketing.',
+      ],
+    },
+    {
+      title: 'Who else handles it',
+      body: [
+        'Vercel hosts the sites. Resend delivers contact form messages to our inbox. Google Fonts serves the typefaces the sites use, so your browser requests them from Google. Each of these companies processes data under its own privacy policy.',
+      ],
+    },
+    {
+      title: 'Cookies and tracking',
+      body: [
+        'The sites do not set cookies and do not use analytics or advertising trackers.',
+      ],
+    },
+    {
+      title: 'How long we keep it',
+      body: [
+        'Messages you send us stay in our email for as long as they are useful for our work together. Ask us and we will delete them.',
+      ],
+    },
+    {
+      title: 'Your choices',
+      body: [
+        'You can ask what information we hold about you, or ask us to correct or delete it, through the contact form or the email address at the bottom of this page.',
+      ],
+    },
+    {
+      title: 'Changes to this policy',
+      body: [
+        'If we change how we handle information, we will update this page and the date at the top.',
+      ],
+    },
+  ],
+  formNote: 'We only use these details to reply to you.',
 }
